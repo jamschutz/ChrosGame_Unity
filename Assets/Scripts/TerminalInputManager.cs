@@ -9,10 +9,12 @@ public class TerminalInputManager : MonoBehaviour
     private string INPUT_FILE_PATH;
     private System.DateTime lastUpdateTime;
 
+    System.Diagnostics.Process terminalProcess;
+
     void Start()
     {
         // run input manager
-        System.Diagnostics.Process.Start($"{Application.dataPath}/CPP_Applications/Windows/inputManager.exe");
+        terminalProcess = System.Diagnostics.Process.Start($"{Application.dataPath}/CPP_Applications/Windows/inputManager.exe");
         INPUT_FILE_PATH = $"{Application.dataPath}/CPP_Applications/Windows/_communications/input.txt";
         lastUpdateTime = System.DateTime.Now;
     }
@@ -45,6 +47,15 @@ public class TerminalInputManager : MonoBehaviour
                 Debug.Log("stopping...");
             }
         }
+    }
+
+
+    void OnApplicationQuit()
+    {
+        // Close process by sending a close message to its main window.
+        terminalProcess.CloseMainWindow();
+        // Free resources associated with process.
+        terminalProcess.Close();
     }
 
 

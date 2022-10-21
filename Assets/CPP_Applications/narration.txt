@@ -1,0 +1,11 @@
+DO NOT CLOSE THIS!!!!
+
+___INSTRUCTIONS___
+type the following options into the command line:
+- "go forward"
+- "go back"
+- "go left"
+- "go right"
+- "turn left"
+- "turn right"
+- "stop"
