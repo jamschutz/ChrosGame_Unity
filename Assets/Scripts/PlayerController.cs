@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;
     public float turnSpeed;
+    public LayerMask groundedLayer;
 
     [Header("Game Objects")]
     public GameObject idle;
@@ -17,13 +18,32 @@ public class PlayerController : MonoBehaviour
     public GameObject backward;
 
 
+    // ----- private vars ----------- //
+    private CharacterController controller;
     private MoveState moveState;
     private TurnState turnState;
 
+    // physics helpers
+    private const float MAX_IS_GROUNDED_DISTANCE = 100f;
+    private float verticalVelocity;
+    private bool isGrounded;
+    private float heightOffset;
+
     private void Start()
     {
+        controller = GetComponent<CharacterController>();
+        verticalVelocity = 0;
+
         SetMoveState(MoveState.None);
         SetTurnState(TurnState.None);
+
+        RaycastHit ground;
+        if (Physics.Raycast(transform.position + Vector3.up, Vector3.down, out ground, MAX_IS_GROUNDED_DISTANCE, groundedLayer)) {
+            heightOffset = transform.position.y - ground.point.y;
+        }
+        else {
+            Debug.Log("no ground :(");
+        }
     }
 
 
@@ -31,7 +51,7 @@ public class PlayerController : MonoBehaviour
     {
         // handle move....
         void Move(Vector3 direction) {
-            transform.Translate(direction * Time.deltaTime, Space.World);
+            transform.Translate(direction * moveSpeed * Time.deltaTime, Space.World);
         }
         switch(moveState) {
             case MoveState.Forward:
@@ -73,6 +93,8 @@ public class PlayerController : MonoBehaviour
                 Debug.LogError($"unknown turn state!!! {turnState.ToString()}");
                 break;
         }
+
+        ApplyGravity();
     }
 
 
@@ -85,8 +107,8 @@ public class PlayerController : MonoBehaviour
         backward.SetActive(false);
 
         void RotateObjects(float angle) {
-            idle.transform.eulerAngles = new Vector3(0, angle, 0);
-            forward.transform.eulerAngles = new Vector3(0, angle, 0);
+            idle.transform.localEulerAngles = new Vector3(0, angle, 0);
+            forward.transform.localEulerAngles = new Vector3(0, angle, 0);
         }
 
         moveState = move;
@@ -131,6 +153,16 @@ public class PlayerController : MonoBehaviour
             default:
                 Debug.LogError($"unknown turn state!!! {turn.ToString()}");
                 break;
+        }
+    }
+
+
+
+    private void ApplyGravity()
+    {
+        RaycastHit ground;
+        if(Physics.Raycast(transform.position + Vector3.up, Vector3.down, out ground, MAX_IS_GROUNDED_DISTANCE, groundedLayer)) {
+            transform.position = new Vector3(transform.position.x, ground.point.y + heightOffset, transform.position.z);
         }
     }
 }

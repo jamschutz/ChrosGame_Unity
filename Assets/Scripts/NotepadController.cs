@@ -13,7 +13,6 @@ public class NotepadController : MonoBehaviour
     void Start()
     {
         NOTEPAD_FILE_PATH = $"{Application.dataPath}/TextFiles/{filename}.txt";
-        ShowNotepadOuput("TEST");
     }
 
 
@@ -25,10 +24,15 @@ public class NotepadController : MonoBehaviour
 
     void OnApplicationQuit()
     {
-        // Close process by sending a close message to its main window.
-        notepad.CloseMainWindow();
-        // Free resources associated with process.
-        notepad.Close();
+        try {
+            // Close process by sending a close message to its main window.
+            notepad.CloseMainWindow();
+            // Free resources associated with process.
+            notepad.Close();
+        }
+        catch {
+            // do nothing
+        }        
     }
 
 
