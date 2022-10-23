@@ -38,6 +38,7 @@ public class NotepadController : MonoBehaviour
 
     void CloseNotepad()
     {
+        Debug.Log("closing!");
         if(notepad == null) return;
 
         try {
@@ -54,6 +55,7 @@ public class NotepadController : MonoBehaviour
 
     void ShowNotepadOuput(string text)
     {
+        Debug.Log("opening!");
         if(notepad != null) {
             CloseNotepad();
         }

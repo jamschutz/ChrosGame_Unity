@@ -51,7 +51,8 @@ public class PlayerController : MonoBehaviour
     {
         // handle move....
         void Move(Vector3 direction) {
-            transform.Translate(direction * moveSpeed * Time.deltaTime, Space.World);
+            // transform.Translate(direction * moveSpeed * Time.deltaTime, Space.World);
+            controller.Move(direction * moveSpeed * Time.deltaTime);
         }
         switch(moveState) {
             case MoveState.Forward:

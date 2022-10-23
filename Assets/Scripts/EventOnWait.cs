@@ -7,6 +7,7 @@ public class EventOnWait : MonoBehaviour
 {
     public UnityEvent event_to_trigger;
     public float wait_time;
+    public bool onlyOnce = true;
 
     float counter;
 
@@ -19,8 +20,10 @@ public class EventOnWait : MonoBehaviour
     void Update()
     {
         counter += Time.deltaTime;
-        if(counter > wait_time)
+        if(counter > wait_time) {
             event_to_trigger.Invoke();
+            if(onlyOnce) Destroy(this);
+        }
     }
 
 
