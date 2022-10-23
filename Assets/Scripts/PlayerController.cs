@@ -84,14 +84,27 @@ public class PlayerController : MonoBehaviour
         forward.SetActive(false);
         backward.SetActive(false);
 
+        void RotateObjects(float angle) {
+            idle.transform.eulerAngles = new Vector3(0, angle, 0);
+            forward.transform.eulerAngles = new Vector3(0, angle, 0);
+        }
+
         moveState = move;
         switch(moveState) {
             case MoveState.Forward:
+                RotateObjects(0);
+                forward.SetActive(true);
+                break;
             case MoveState.Left:
+                RotateObjects(-90);
+                forward.SetActive(true);
+                break;
             case MoveState.Right:
+                RotateObjects(90);
                 forward.SetActive(true);
                 break;
             case MoveState.Backward:
+                RotateObjects(0);
                 backward.SetActive(true);
                 break;
             case MoveState.None:
