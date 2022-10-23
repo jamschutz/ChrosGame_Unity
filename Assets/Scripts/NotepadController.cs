@@ -5,23 +5,21 @@ using System.IO;
 
 public class NotepadController : MonoBehaviour
 {
+    public string filename;
 
     string NOTEPAD_FILE_PATH;
     System.Diagnostics.Process notepad;
     
     void Start()
     {
-        NOTEPAD_FILE_PATH = $"{Application.dataPath}/CPP_Applications/narration.txt";
+        NOTEPAD_FILE_PATH = $"{Application.dataPath}/TextFiles/{filename}.txt";
         ShowNotepadOuput("TEST");
-
-        Invoke("SayHello", 5);
     }
 
 
-
-    void SayHello()
+    public void Speak(string text)
     {
-        ShowNotepadOuput("hello....");
+        ShowNotepadOuput(text);
     }
 
 
