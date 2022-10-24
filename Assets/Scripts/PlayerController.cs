@@ -158,6 +158,12 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    public MoveState GetMoveState()
+    {
+        return moveState;
+    }
+
+
 
     private void ApplyGravity()
     {

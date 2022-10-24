@@ -391,6 +391,91 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &446335280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 446335281}
+  - component: {fileID: 446335282}
+  - component: {fileID: 446335283}
+  m_Layer: 0
+  m_Name: NamelessTree
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &446335281
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446335280}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -204, y: 5.9, z: -348.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1856954783}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &446335282
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446335280}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 38.78
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &446335283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446335280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40b8713a486dcf4a99710d685353a11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventOnSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 162281589}
+        m_TargetAssemblyTypeName: NotepadController, Assembly-CSharp
+        m_MethodName: Speak
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Excellent work, Lettuce.
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1833795493}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  onlyOnce: 1
 --- !u!1 &498288103
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,9 +503,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1660668086}
-  - {fileID: 1220674904}
-  - {fileID: 1798807835}
+  - {fileID: 1856954783}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -449,15 +532,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1c93d878566531f44b5cd98a42224e11, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -233
+      value: -204
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1c93d878566531f44b5cd98a42224e11, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1c93d878566531f44b5cd98a42224e11, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -389.9
+      value: -345
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1c93d878566531f44b5cd98a42224e11, type: 3}
       propertyPath: m_LocalRotation.w
@@ -489,7 +572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1c93d878566531f44b5cd98a42224e11, type: 3}
       propertyPath: m_Name
-      value: model
+      value: NamelessTree
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c93d878566531f44b5cd98a42224e11, type: 3}
@@ -825,7 +908,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1220674904
 Transform:
   m_ObjectHideFlags: 0
@@ -833,11 +916,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220674903}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -208.73, y: 1.8, z: -445.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 498288104}
+  m_Father: {fileID: 1856954783}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1220674905
@@ -882,7 +965,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 162281589}
+      - m_Target: {fileID: 1253509952}
         m_TargetAssemblyTypeName: NotepadController, Assembly-CSharp
         m_MethodName: Speak
         m_Mode: 5
@@ -891,7 +974,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Good, Lettuce. Keep going.
+          m_StringArgument: Lettuce....it's me, Lisa. Lisa Cranberry.
           m_BoolArgument: 0
         m_CallState: 2
   eventOnExit:
@@ -908,7 +991,7 @@ GameObject:
   - component: {fileID: 1253509951}
   - component: {fileID: 1253509952}
   m_Layer: 0
-  m_Name: Lettuce
+  m_Name: LisaCranberry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -940,7 +1023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e566f6efbbb0604186205cd593c72e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filename: Lettuce
+  filename: LisaCranberry
 --- !u!1 &1567767410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,11 +1165,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660668085}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 498288104}
+  m_Father: {fileID: 1856954783}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1660668087
@@ -1113,7 +1196,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: The Paper Tree is directly ahead of you. To move forward,
+          m_StringArgument: The Nameless Tree is directly ahead of you. To move forward,
             type "go forward" into the terminal. Hurry, Lettuce, there's not much
             time.
           m_BoolArgument: 0
@@ -1144,8 +1227,8 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Hello, Lettuce. Make your way to Paper Tree. The fate
-            of the world is in your hands...
+          m_StringArgument: Oh...Lettuce......Make your way to the Nameless Tree.
+            The fate of the world is in your hands...
           m_BoolArgument: 0
         m_CallState: 2
   wait_time: 0.1
@@ -1175,11 +1258,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798807834}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -208.73, y: 1.8, z: -377.7}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -208.73, y: 1.8, z: -401.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 498288104}
+  m_Father: {fileID: 1856954783}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1798807836
@@ -1241,6 +1324,194 @@ MonoBehaviour:
   eventOnExit:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1833795493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1833795494}
+  - component: {fileID: 1833795498}
+  - component: {fileID: 1833795497}
+  - component: {fileID: 1833795496}
+  - component: {fileID: 1833795495}
+  m_Layer: 0
+  m_Name: ThisIsTheNamelessTree
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1833795494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833795493}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1856954783}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1833795495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833795493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2aae232b087c546a0ab8162f9a0c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event_to_trigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 162281589}
+        m_TargetAssemblyTypeName: NotepadController, Assembly-CSharp
+        m_MethodName: Speak
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: The following commands will get you through this night:[NEW_LINE][NEW_LINE] 
+            "go forward"[NEW_LINE] "go back"[NEW_LINE] "go left"[NEW_LINE] "go right"[NEW_LINE]
+            "turn left"[NEW_LINE] "turn right"[NEW_LINE] "stop"
+          m_BoolArgument: 0
+        m_CallState: 2
+  wait_time: 22
+  onlyOnce: 1
+--- !u!114 &1833795496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833795493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2aae232b087c546a0ab8162f9a0c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event_to_trigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 162281589}
+        m_TargetAssemblyTypeName: NotepadController, Assembly-CSharp
+        m_MethodName: Speak
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Together, we will destroy it. Now, let me explain how
+            to navigate this cursed land.
+          m_BoolArgument: 0
+        m_CallState: 2
+  wait_time: 17
+  onlyOnce: 1
+--- !u!114 &1833795497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833795493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2aae232b087c546a0ab8162f9a0c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event_to_trigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 162281589}
+        m_TargetAssemblyTypeName: NotepadController, Assembly-CSharp
+        m_MethodName: Speak
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: It is a great evil, Lettuce.
+          m_BoolArgument: 0
+        m_CallState: 2
+  wait_time: 12
+  onlyOnce: 1
+--- !u!114 &1833795498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833795493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2aae232b087c546a0ab8162f9a0c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event_to_trigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 162281589}
+        m_TargetAssemblyTypeName: NotepadController, Assembly-CSharp
+        m_MethodName: Speak
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: This is the Nameless Tree, Lettuce. Look at it.
+          m_BoolArgument: 0
+        m_CallState: 2
+  wait_time: 5
+  onlyOnce: 1
+--- !u!1 &1856954782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1856954783}
+  m_Layer: 0
+  m_Name: Part1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1856954783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856954782}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1660668086}
+  - {fileID: 1220674904}
+  - {fileID: 1798807835}
+  - {fileID: 446335281}
+  - {fileID: 1833795494}
+  m_Father: {fileID: 498288104}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2018107338
 GameObject:
   m_ObjectHideFlags: 0

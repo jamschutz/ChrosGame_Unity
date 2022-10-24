@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System.Runtime.InteropServices;
 
 public class NotepadController : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class NotepadController : MonoBehaviour
 
     public void Speak(string text)
     {
-        ShowNotepadOuput(text);
+        ShowNotepadOuput(text.Replace("[NEW_LINE]","\n"));
     }
 
 
@@ -62,5 +63,38 @@ public class NotepadController : MonoBehaviour
 
         File.WriteAllText(NOTEPAD_FILE_PATH, text);
         notepad = System.Diagnostics.Process.Start("notepad.exe", NOTEPAD_FILE_PATH);
+        // StartCoroutine("KeepTryingToMoveWindow");
+        // // try {
+        // //     if(NotepadController.MoveWindow(notepad.MainWindowHandle, 0, 0, 0, 500, true)) {
+        // //         Debug.Log("success!");
+        // //     }     
+        // //     else {
+        // //         Debug.LogError($"unable to move notepad window {filename}: {Marshal.GetLastWin32Error()}...");
+        // //     }
+        // // }
+        // // catch(System.Exception ex) {
+        // //     Debug.LogError($"error moving notepad window: {ex.Message}");
+        // // }
+        
     }
+
+    IEnumerator KeepTryingToMoveWindow()
+    {
+        Debug.Log("trying to move!");
+        while(true) {
+            Debug.Log("trying to move!");
+            if(NotepadController.MoveWindow(notepad.MainWindowHandle, 0, 0, 0, 500, true)) {
+                Debug.Log("success!");
+                break;
+            }     
+            else {
+                Debug.LogError($"unable to move notepad window {filename}: {Marshal.GetLastWin32Error()}...");
+            }
+            yield return null;
+        }
+        
+    }
+    
+    [DllImport("user32.dll", SetLastError = true)]
+    internal static extern bool MoveWindow(System.IntPtr hWnd, int X, int Y, int nWidth, int nHeight, bool bRepaint);
 }

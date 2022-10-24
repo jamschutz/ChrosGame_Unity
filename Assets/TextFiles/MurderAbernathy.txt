@@ -1,1 +1,9 @@
-The Paper Tree is coming up soon. When you get near it, type "stop" to stop moving. I will give you further instructions then. Hurry, Lettuce...
+The following commands will get you through this night:
+
+  "go forward"
+ "go back"
+ "go left"
+ "go right"
+ "turn left"
+ "turn right"
+ "stop"
