@@ -1,6 +1,6 @@
 The following commands will get you through this night:
 
-  "go forward"
+"go forward"
  "go back"
  "go left"
  "go right"
