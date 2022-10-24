@@ -1,9 +1,1 @@
-The following commands will get you through this night:
-
-"go forward"
- "go back"
- "go left"
- "go right"
- "turn left"
- "turn right"
- "stop"
+Hurry, Lettuce! Follow the signs!
